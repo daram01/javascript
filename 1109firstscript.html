@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        alert("hello world!");
+    </script> -->
+    
+    <!-- <script src="myscript.js"></script> -->
+
+    <script>
+        /* document.write("환영합니다."); // document.write -> 브라우저 화면에 결과를 출력하는 역할을 한다. */
+        // 타입은 문자, 숫자, 날짜, 논리형도 있다.
+
+        var age; //변수를 선언할 때 var로 한다. var 형식은 타입체크를 하지 않는다. 변수는 자바와 똑같이 대소문자를 구분한다.
+        age = 10;
+        document.write(age + "<br>");
+        // document.write("<br>"); //줄바꿈 문자 
+
+        age = 20;
+        document.write(age + "<br>");
+
+        age = "Hello";
+        document.write(age + "<br>");
+
+        var age = "안녕"; //같은 이름으로 변수를 여러번 선언이 가능하다.
+        document.write(age + "<br>");
+
+        var name; //undefined 데이터. 
+        document.write(name) + "<br>";
+
+        name = "홍길동"; // var로 선언된 변수의 호이스팅(Hoisting)
+        // name에 값을 출력문보다 밑에 넣었는데도 출력이 되는 현상이 발생한다. 자스의 특징임.
+
+        name = '이순신';
+
+        // ES6
+        // var, let, cont
+
+        let number;
+        number = 1;
+        document.write(number + "<br>");
+
+        number = 100;
+        document.write(number + "<br>");
+
+        number = "홍길동";
+        document.write(number + "<br>"); // 숫자에서 문자열로 바뀌었는데도 타입체크 없이 출력이 잘 됨. 
+
+        // let number; // 같은 이름의 변수는 선언할 수 없다.
+        // number = 1000;
+        // document.write(number + "<br>");
+
+    </script>
+</head>
+<body>
+    <!-- <script> -- head에 들어가도, body에 들어가도 상관은 없음
+                태그를 제어하는 목적이 있음.
+    </script> -->
+
+    <!-- <button type="button" onclick="javascript:alert('hello world!!');">버튼</button> -->
+
+</body>
+</html>
