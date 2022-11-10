@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let today = new Date();
+        // //date라는 내장객체를 생성한다.
+        // //속성과 기능
+        // document.write(today.getFullYear() + "<br>");
+        // document.write(today.getMonth()+ 1 + "<br>"); // 0부터 11까지가 달 정보이다.
+        // document.write(today.getDate() + "<br>");
+        // document.write(today.getDay() + "<br>");
+
+        // let day = today.getDay();
+
+        // switch(day){
+        //     case 0 : document.write("일요일");
+        //     break;
+        //     case 1 : document.write("월요일");
+        //     break;
+        //     case 2 : document.write("화요일");
+        //     break;
+        //     case 3 : document.write("수요일");
+        //     break;
+        //     case 4 : document.write("목요일");
+        //     break;
+        //     case 5 : document.write("금요일");
+        //     break;
+        //     case 6 : document.write("토요일");
+        //     break;
+        // }
+
+        // document.write("<br>================================<br>");
+
+
+        // today.setFullYear(2000);
+        // today.setMonth(0);
+        // today.setDate(1);
+
+        // document.write(today.getFullYear() + "<br>");
+        // document.write(today.getMonth()+ 1 + "<br>"); // 0부터 11까지가 달 정보이다.
+        // document.write(today.getDate() + "<br>");
+        // document.write(today.getDay() + "<br>");
+
+        // day = today.getDay();
+
+        // switch(day){
+        //     case 0 : document.write("일요일");
+        //     break;
+        //     case 1 : document.write("월요일");
+        //     break;
+        //     case 2 : document.write("화요일");
+        //     break;
+        //     case 3 : document.write("수요일");
+        //     break;
+        //     case 4 : document.write("목요일");
+        //     break;
+        //     case 5 : document.write("금요일");
+        //     break;
+        //     case 6 : document.write("토요일");
+        //     break;
+        // }
+
+        // document.write("<br>================================<br>");
+
+        // let start = new Date(2020,7,1);
+
+        // document.write(start.getFullYear() + "<br>");
+        // document.write(start.getMonth()+ 1 + "<br>"); // 0부터 11까지가 달 정보이다.
+        // document.write(start.getDate() + "<br>");
+        // document.write(start.getDay() + "<br>");
+
+        // document.write("<br>================================<br>");
+
+        // let today = new Date();
+        // let nowYear = today.getFullYear();
+        
+        // let theDate = new Date(nowYear, 11, 31);
+        // let diffDate = theDate.getTime()-today.getTime();
+
+        // let result = Math.ceil (diffDate / (60*1000*60*24));
+        // document.write("연말 D-day: " + result + "일 남았습니다.");
+
+
+        // 1부터 10까지 난수 구하기
+        // for(let i = 1; i <=10 ; i++){
+        //     let ran = Math.floor(Math.random() * 10) + 1;
+        //     document.write(ran + "<br>");
+        // }
+
+
+        // 가위바위보 게임 만들기
+        // document.write("<h1> 가위 바위 보 맞추기 게임</h1>");
+
+        // let me = prompt("1.가위 2.바위 3.보 중 선택하세요.(숫자)","");
+
+        // let com = Math.floor(Math.random()*3)+1;
+
+        // document.write("<img src='image/" + com +".jpg'>");
+
+        // if(me==com){ 
+        //     document.write("<img src='image/5.jpg'>");
+        // }else{
+        //     document.write("<img src='image/4.jpg'>");
+        // }
+
+
+        // 컴퓨터와 가위바위보 게임 하기
+
+        document.write("<h1> 가위 바위 보 게임</h1>");
+
+        let me = prompt("1.가위 2.바위 3.보 중 선택하세요.(숫자)","");
+        let com = Math.floor(Math.random()*3)+1;
+
+        document.write("<img src='image/" + com +".jpg'>");
+
+        switch(me){
+            case "1" : if(me==com){
+                document.write("<img src='image/1.jpg'>");
+                document.write("비겼습니다.");
+                break;
+            }else if(me>com){
+                document.write("<img src='image/1.jpg'>");
+                document.write("졌습니다.");
+                break;
+            }else if(me>com){
+                document.write("<img src='image/1.jpg'>");
+                document.write("이겼습니다.");
+                break;
+            }
+
+            case "2" : if(me==com){
+                document.write("<img src='image/2.jpg'>");
+                document.write("비겼습니다.");
+                break;
+            }else if(me>com){
+                document.write("<img src='image/2.jpg'>");
+                document.write("이겼습니다.");
+                break;
+            }else if(me<com){
+                document.write("<img src='image/2.jpg'>");
+                document.write("졌습니다.");
+                break;
+            }
+
+            case "3" : if(me==com){
+                document.write("<img src='image/3.jpg'>");
+                document.write("비겼습니다.");
+                break;
+            }else if(me>com){
+                document.write("<img src='image/3.jpg'>");
+                document.write("이겼습니다.");
+                break;
+            }else if(me<com){
+                document.write("<img src='image/3.jpg'>");
+                document.write("졌습니다.");
+                break;
+            }
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

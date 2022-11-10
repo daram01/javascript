@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blue{
+            color: blue;
+        }
+        .red{
+            color: red;
+            font-size: 20px;
+        }
+
+        .odd{
+            background-color: bisque;
+        }
+
+        .even{
+            background-color: azure;
+        }
+        table{
+            border-spacing: 0;
+            text-align: center;
+        }
+    </style>
+    <script>
+        // let num1 = 10;
+        // let num2 = 20;
+        // let name = "홍길동";
+        // let age = 20;
+        // document.write("num1 + num2 = " + (num1+num2) + "<br>");
+        // document.write("이름 = " + name + "<br>");
+        // document.write("이름 = " + name + ", 나이 = " + age + "<br>");
+
+        // let str = "<table border='1'>";
+        // // 안의 속성을 적용할 때는 ""가 아닌 ''를 사용해야 한다.
+        // str += "<tr>";
+        // str += "<td>1</td><td>2</td><td>3</td>";
+        // str += "</tr>";
+        // str += "</table>";
+        // document.write(str + "<br>");
+
+        // let h = 180;
+        // let w = 74;
+        // let normal = (h - 100) * 0.9;
+        // document.write("적정 체중은 " + normal + " kg이며, " + (w - normal) + " kg 초과 하였습니다.");
+
+        // prompt - 사용자로부터 입력된 값을 문자형 데이터로 반환한다.
+        // let h = prompt("키를 입력하세요.", "0");
+        // let w = prompt("몸무게를 입력하세요.", "0");
+        // let normal = (h - 100) * 0.9;
+        // document.write("적정 체중은 " + normal + " kg이며, " + (w - normal) + " kg 초과 하였습니다.");
+
+        // 연습문제 1
+        // let price1 = 3000;
+        // let price2 = 6000;
+        // let price3 = 3000;
+        // let price4 = price1+price2+price3;
+        // document.write(price4 > 10000 ? price4 -10000 + "원 초과" : "돈 관리 잘했어요!");
+        
+        // 연습문제 2
+        // let avg = (1200 + 1300 + 1000) / 3;
+        // let four = prompt("4분기 실적을 입력하세요. ", "0");
+        
+        // let result = four >= avg ? "평균 이상입니다." : "평균 이하입니다.";
+        // document.write(result);
+
+        
+        // 조건식
+        // 조건문에 0을 넣으면 false 나머지 값은 모두 true
+        // null이면 false
+        // "" 이면 false 나머지 값은 모두 true
+        // undefined이면 false
+
+        // let walk = prompt("하루에 몇 보를 걷는지 적으세요.", "0");
+        // if( walk >= 10000){
+        //     document.write("좋은 습관을 가지고 있네요!");
+        // }
+
+        // let num = 3;
+        // if(num){
+        //     document.write(num);
+        // }
+        // 결과값 : 3
+
+        // let num = 0;
+        // if(num){
+        //     document.write(num);
+        // }
+        // 결과값이 나오지 않는다. num이 0이기 때문에 false를 반환.
+
+        // if("hello"){
+        //     document.write("hello world!!");
+        // }
+        // 자바와 다르게 결과값이 hello world!!로 잘 뜬다.
+
+
+        // let result = confirm("정말 파일을 삭제 하시겠습니까?"); 
+        // // 확인을 누르면 true가 반환되고, 취소를 누르면 false가 반환된다.
+
+        // if(result){
+        //     document.write("파일을 삭제했습니다.");
+        // } else {
+        //     document.write("파일 삭제를 취소합니다.");
+        // }
+
+
+        // let site = prompt("네이버, 다음, 네이트, 구글 중 즐겨 사용하는 포털 검색 사이트는?", "");
+        // let url;
+
+        // switch(site){
+        //     case "네이버" : url = "www.naver.com";
+        //     break;
+        //     case "다음" : url = "www.daum.net";
+        //     break;
+        //     case "네이트" : url = "www.nate.com";
+        //     break;
+        //     case "구글" : url = "www.google.com";
+        //     break;
+        //     default: alert("보기 중에 없는 사이트입니다.");
+        // }
+
+        // if(url) location.href = "http://" + url;
+
+        
+        // while문
+        // while(변수로 조건식){
+        //     실행문
+        //     변수를 사용한 증감식
+        // }
+
+        // let i = 20;
+        // while(i >= 10){
+        //     if(i % 2 == 0){
+        //         document.write("<p class='blue'>" + i + "</p>");
+        //     }else{
+        //         document.write("<p class='red'>" + i + "</p>");
+        //     }
+        //     i--;
+        // }
+
+        
+        // 연습문제
+
+        // let i = 1;
+        // while(i<=9){
+        //     document.write("5X"+i+"="+i*5 + "<br>");
+        //     i++;
+        // }
+
+        // 연습문제2
+        // let num = 1;
+        // let t = "<table border=1>";
+        // for(let i=1; i<=5;i++){
+        //     t+="<tr>"
+        //         for(let k=1;k<=5;k++){
+        //             if(i%2==1){
+        //             t+="<td class='blue'>" + num + "</td>";
+        //            }else{
+        //             t+="<td class='red'>" + num + "</td>";
+        //         }
+        //             num++;
+        //         }
+        //         t+="</tr>";
+        // }
+        // t+="</teble>";
+        // console.log(t);
+        // document.write(t);
+
+        // 연습문제 3
+        
+
+        document.write("<h1>구구단표</h1>");
+
+        document.write("<table width=50%"); 
+        for (let i = 1; i <= 9; i++) {
+            if(i % 2 == 1){
+                document.write("<tr class='odd'>");
+            }else{
+                document.write("<tr class='even'>");
+            }
+            for (let j = 1; j <= 9; j++) {
+                document.write("<td>" + i * j + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("<table>");
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

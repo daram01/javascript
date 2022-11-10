@@ -12,47 +12,82 @@
     <!-- <script src="myscript.js"></script> -->
 
     <script>
-        /* document.write("환영합니다."); // document.write -> 브라우저 화면에 결과를 출력하는 역할을 한다. */
-        // 타입은 문자, 숫자, 날짜, 논리형도 있다.
+        // /* document.write("환영합니다."); // document.write -> 브라우저 화면에 결과를 출력하는 역할을 한다. */
+        // // 타입은 문자, 숫자, 날짜, 논리형도 있다.
 
-        var age; //변수를 선언할 때 var로 한다. var 형식은 타입체크를 하지 않는다. 변수는 자바와 똑같이 대소문자를 구분한다.
-        age = 10;
-        document.write(age + "<br>");
-        // document.write("<br>"); //줄바꿈 문자 
+        // var age; //변수를 선언할 때 var로 한다. var 형식은 타입체크를 하지 않는다. 변수는 자바와 똑같이 대소문자를 구분한다.
+        // age = 10;
+        // document.write(age + "<br>");
+        // // document.write("<br>"); //줄바꿈 문자 
 
-        age = 20;
-        document.write(age + "<br>");
+        // age = 20;
+        // document.write(age + "<br>");
 
-        age = "Hello";
-        document.write(age + "<br>");
+        // age = "Hello";
+        // document.write(age + "<br>");
 
-        var age = "안녕"; //같은 이름으로 변수를 여러번 선언이 가능하다.
-        document.write(age + "<br>");
+        // var age = "안녕"; //같은 이름으로 변수를 여러번 선언이 가능하다.
+        // document.write(age + "<br>");
 
-        var name; //undefined 데이터. 
-        document.write(name) + "<br>";
+        // var name; //undefined 데이터. 
+        // document.write(name) + "<br>";
 
-        name = "홍길동"; // var로 선언된 변수의 호이스팅(Hoisting)
-        // name에 값을 출력문보다 밑에 넣었는데도 출력이 되는 현상이 발생한다. 자스의 특징임.
+        // name = "홍길동"; // var로 선언된 변수의 호이스팅(Hoisting)
+        // // name에 값을 출력문보다 밑에 넣었는데도 출력이 되는 현상이 발생한다. 자스의 특징임.
 
-        name = '이순신';
 
-        // ES6
-        // var, let, cont
+        // // ES6
+        // // var, let, const
 
-        let number;
-        number = 1;
-        document.write(number + "<br>");
+        // let number;
+        // number = 1;
+        // document.write(number + "<br>");
 
-        number = 100;
-        document.write(number + "<br>");
+        // number = 100;
+        // document.write(number + "<br>");
 
-        number = "홍길동";
-        document.write(number + "<br>"); // 숫자에서 문자열로 바뀌었는데도 타입체크 없이 출력이 잘 됨. 
+        // number = "홍길동";
+        // document.write(number + "<br>"); // 숫자에서 문자열로 바뀌었는데도 타입체크 없이 출력이 잘 됨. 
 
         // let number; // 같은 이름의 변수는 선언할 수 없다.
         // number = 1000;
         // document.write(number + "<br>");
+
+        // 2022.11.10
+        // var함수의 특징
+        // 1. 같은 이름으로 변수 선언이 가능하다.
+        // 2. 호이스팅 가능하다.
+        // 3. 전역변수
+
+        // let함수의 특징
+        // 1. 같은 이름으로 변수 선언이 불가하다. 
+        // 2. 호이스팅 불가하다.
+        // 3. 블록레벨 스코프(지역변수)
+
+        var x = 1; // x - var 타입이기 때문에 전역변수
+        if(true){
+            var x = 5;
+        }
+        document.write(x + "<br>");
+        // 결과값은 5가 나온다. var 타입은 전역변수이기 때문이다.
+
+        let y = 1; 
+        if(true){
+            let y = 5; // 지역변수이기 때문에 블록을 벗어나면 값이 적용이 안 된다.
+        }
+        document.write(y + "<br>");
+        // 결과 값은 1이 나온다. 
+
+        const name = 'hong';
+        document.write(name + "<br>");
+        // 결과값이 hong으로 나온다.
+        name = 'kim';
+        document.write(name + "<br>");
+        // 1109firstscript.html:84 Uncaught TypeError: Assignment to constant variable. <상수 변수에 한번 더 할당을 했기 때문에 뜨는 에러>
+        // at 1109firstscript.html:84:14
+        // 결과값이 나오지 않음. const는 상수이기 때문이다. 
+
+
 
     </script>
 </head>
