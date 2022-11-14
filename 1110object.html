@@ -110,58 +110,12 @@
 
         // 컴퓨터와 가위바위보 게임 하기
 
-        document.write("<h1> 가위 바위 보 게임</h1>");
+        // document.write("<h1> 가위 바위 보 게임</h1>");
 
-        let me = prompt("1.가위 2.바위 3.보 중 선택하세요.(숫자)","");
-        let com = Math.floor(Math.random()*3)+1;
+        // let me = prompt("1.가위 2.바위 3.보 중 선택하세요.(숫자)","");
+        // let com = Math.floor(Math.random()*3)+1;
 
-        document.write("<img src='image/" + com +".jpg'>");
-
-        switch(me){
-            case "1" : if(me==com){
-                document.write("<img src='image/1.jpg'>");
-                document.write("비겼습니다.");
-                break;
-            }else if(me>com){
-                document.write("<img src='image/1.jpg'>");
-                document.write("졌습니다.");
-                break;
-            }else if(me>com){
-                document.write("<img src='image/1.jpg'>");
-                document.write("이겼습니다.");
-                break;
-            }
-
-            case "2" : if(me==com){
-                document.write("<img src='image/2.jpg'>");
-                document.write("비겼습니다.");
-                break;
-            }else if(me>com){
-                document.write("<img src='image/2.jpg'>");
-                document.write("이겼습니다.");
-                break;
-            }else if(me<com){
-                document.write("<img src='image/2.jpg'>");
-                document.write("졌습니다.");
-                break;
-            }
-
-            case "3" : if(me==com){
-                document.write("<img src='image/3.jpg'>");
-                document.write("비겼습니다.");
-                break;
-            }else if(me>com){
-                document.write("<img src='image/3.jpg'>");
-                document.write("이겼습니다.");
-                break;
-            }else if(me<com){
-                document.write("<img src='image/3.jpg'>");
-                document.write("졌습니다.");
-                break;
-            }
-        }
-
-
+        // document.write("<img src='image/" + com +".jpg'>");
 
     </script>
 </head>
