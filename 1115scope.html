@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 즉시 실행 함수 = 자동 호출 함수
+        // (function(){}());
+        // (function(){
+        //     실행문
+        // }( 함수호출 )) 
+        // );
+
+        
+        // 기본 사용법
+        // (function(x){
+        //     console.log(x*x);
+        // }(2) 
+        // );
+
+
+        // 함수의 이름을 만들어 줄 수도 있다.
+        (mySquare = function(x){
+            console.log(x*x);
+        }(3)
+        );
+
+
+        // 함수명으로 호출을 할 때는, 마지막 괄호 밖에 ()를 작성해야 한다.
+        (mySquare = function(x){
+            console.log(x*x);
+        })(3);
+        mySquare(4);
+
+
+        // retrun값을 가진 변수를 만드는 식. 이 경우에도 마지막 괄호 밖에 ()를 작성. 전역변수이기 때문에 var타입을 선언한다.
+        var mySquare = (function(x){
+            return x*x;
+        })(5);
+
+        console.log(mySquare);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

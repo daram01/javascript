@@ -54,6 +54,7 @@
         // console.log(a);
 
 
+
         // let color = ["white", "yellow", "aqua", "purple"];
 
         // let i = 0;
@@ -98,33 +99,58 @@
         // sum(10,20,30,40,50);
 
 
+        // 5. 가변인자 방식
+
+        let sum1 = 0;
+        function sum(...number){
+            for(let i=0;i<number.length;i++){
+                sum1 += number[i];
+            }
+            document.write(sum1);
+        }
+
+        sum(10,20,30);
+
+
+
         // 둘이 하는 역할은 같음.
         // parseInt(prompt()) -> 문자를 숫자로.
         // Number(prompt()) -> 문자를 숫자로.
 
 
-        function testAvg(arrData){ 
-            // tesrAvg(국어(인덱스0번), 수학(인덱스1번)) 배열의 길이가 2인 데이터.
-            let sum = 0;
-            // 합계를 낼 sum을 0으로 초기화.
-            for (let i=0; i<arrData.length; i++){
-                // i가 2가 되기 전 까지
-                sum += Number(prompt(arrData[i] + "점수는?", "0"));
-                // sum에 사용자에게 입력받은 점수를 대입한다. 처음엔 i가 0이기 때문에 국어 점수가 입력되고, for문이 한번 더 돌면 i가 1이기 때문에 수학 점수가 입력된다.
+        // function testAvg(arrData){ 
+        //     // tesrAvg(국어(인덱스0번), 수학(인덱스1번)) 배열의 길이가 2인 데이터.
+        //     let sum = 0;
+        //     // 합계를 낼 sum을 0으로 초기화.
+        //     for (let i=0; i<arrData.length; i++){
+        //         // i가 2가 되기 전 까지
+        //         sum += Number(prompt(arrData[i] + "점수는?", "0"));
+        //         // sum에 사용자에게 입력받은 점수를 대입한다. 처음엔 i가 0이기 때문에 국어 점수가 입력되고, for문이 한번 더 돌면 i가 1이기 때문에 수학 점수가 입력된다.
+        //     }
+        //     let avg = sum / arrData.length;
+        //     // 평균값은 sum / 2
+        //     return avg;
+        //     // 구해진 평균값을 반환한다.
+        // }
+
+        // let arrSubject = ["국어", "수학"];
+        // let result = testAvg(arrSubject);
+
+        // document.write("평균 점수는" + result + "점입니다.");
+
+        let num = 1;
+        function gallery(direct){
+            if(direct){
+                if(num == 5) return;
+                num++;
+            }else {
+                if(num == 1) return;
+                num--;
             }
-            let avg = sum / arrData.length;
-            // 평균값은 sum / 2
-            return avg;
-            // 구해진 평균값을 반환한다.
+
+            let imgTag = document.getElementById("photo");
+            imgTag.setAttribute("src", "image/pic_" + num + ".jpeg");
         }
-
-        let arrSubject = ["국어", "수학"];
-        let result = testAvg(arrSubject);
-
-        document.write("평균 점수는" + result + "점입니다.");
-
-
-
 
 
 
@@ -132,5 +158,12 @@
 </head>
 <body id = "theBody">
     <!-- <button onclick="changeColor();">배경색 바꾸기</button> -->
+    <div id="galleryZone">
+        <p><img src="image/pic_1.jpeg" id="photo" alt=""></p>
+        <p>
+            <button onclick="gallery(0)">이전</button>
+            <button onclick="gallery(1)">다음</button>
+        </p>
+    </div>
 </body>
 </html>

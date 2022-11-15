@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 객체란?
+        // 객체란 이름(key, name)과 값(value)로 구성된 프로퍼티의 집합이다.
+        // 원시타입(primirive type)을 제외한 모든 것이 객체(Object)로 정의된다.
+        // let obj = {} -> 객체 let obj = [] -> 배열 ★헷갈리지 않기
+
+        // 객체의 정의와 프로퍼티 참조방식
+        // 1. object.property (Dot Notation)
+        // 2. object["property"] (Bracket Notation)
+
+        // 객체를 생성하는 첫번째 방식
+        // let obj = { // 객체의 정의
+        // //  key:value
+        //     cat:"mcow",
+        //     dog:"woof"
+        // };
+
+        // // 1. object.property (Dot Notation) 방식
+        // console.log(obj.cat); // 객체의 사용
+        // console.log(obj.dog); // 객체의 사용
+
+
+        // // 2. object['property'] (Bracket Notation) 방식
+        // console.log(obj["cat"]); // 객체의 사용
+        // console.log(obj["dog"]); // 객체의 사용
+
+
+        // // 가장 중요한 차이점은 Bracket안에는 변수를 담을 수 있다는 점이다.
+        // let cat = "cat";
+        // let dog = "dog";
+        // console.log(obj[cat]); 
+        // console.log(obj[dog]);
+
+
+        // let obj = {
+        //     cat:"mcow",
+        //     dog:"woof",
+        //     animal:function(){ //익명함수방식
+        //         return `현재 동물은 ${this.cat}과 ${this.dog}이 있다.`; // 문자열과 변수를 결합 - `템플릿 표시${} 방식`;
+        //     }
+        // };
+
+        // let obj = {
+        //     cat:"mcow",
+        //     dog:"woof",
+        //     animal:function(){
+        //         return `현재 동물은 ${this.cat}과 ${this.dog}이 있다.`;
+        //     }
+        // };
+
+        // console.log(obj.animal());
+
+
+
+
+        // 객체에 값 추가하기.
+        // let obj = { // 객체의 정의
+        // //  key:value
+        //     cat:"mcow",
+        //     dog:"woof"
+        // };
+
+        // 객체 추가
+        // obj.cow = "moo"; 
+        // obj["pig"] = "oink";
+
+        // console.log(obj.cow);
+        // console.log(obj.pig);
+
+        // // 객체의 값 삭제 delete 사용
+        // delete obj.cat;
+        // console.log(obj.cat); // 결과값 : undefined. 위에서 삭제를 했기 때문이다.
+
+        // 객체의 값 수정
+        // obj.cat = "abc";
+        // console.log(obj.cat);
+
+        // 객체 데이터 조회
+        // for in 구문
+        // for(let key in obj){ //obj의 key 값을 읽어온다.
+        //     console.log(`key는 ${key}, vlaue는 ${obj[key]} 입니다.`);
+        // }
+
+
+
+        // 객체를 생성하는 두번째 방식
+        // new Object();
+        // 값이 없는 빈 객체를 생성
+        // let animal = new Object(); // 애니멀이라는 빈 객체 생성
+        // animal.cat = "meow";
+        // animal.dog = "woof";
+        // animal.cow = "moo";
+        // console.log(animal.cat);
+
+
+
+        // 객체를 생성하는 세번째 방식
+        // 객체 생성자 함수
+        // 생성을 해서 사용해야 한다. (new 키워드)
+        //       클래스이름(매개변수) - 자바에서의 생성자 형태
+        //       메소드
+        // function Animal(name, sound){
+        //     this.name = name;
+        //     this.sound = sound;
+
+        //     this.animal = function(){
+        //     return `현재 동물은 ${this.name}이며, 소리는 ${this.sound} 이다.`;
+        //     }
+        // };
+
+        // let cat = new Animal("cat", "meow");
+        // let dog = new Animal("dog", "woof");
+        // console.log(cat.animal());
+        // console.log(dog.animal());
+
+
+
+        // p.149 예제 코딩
+        // 공유하는 것을 prototype이라고 한다. (자바에서의 static)
+        // 객체를 생성할 때 마다 메모리를 차지하게 되는데, 메모리 낭비를 줄이기 위해 메소드(함수)들은 밖으로 빼서 등록한다.
+        function CheckWeight(name, height, weight){ // 생성자 함수
+            this.username = name;
+            this.userheight = height;
+            this.userweight = weight;
+            this.minWeight; // 최소 몸무게
+            this.maxWeight; // 최대 몸무게
+        }
+
+        CheckWeight.prototype.getInfo = function(){
+            let str = ""
+            str += "이름: " + this.username + ", ";
+            str += "키: " + this.userheight + ", ";
+            str += "몸무게: " + this.userweight + "<br>";
+            return str;
+        }
+
+        CheckWeight.prototype.getResult = function(){
+            this.minWeight = (this.userheight - 100) * 0.9 - 5;
+            this.maxWeight = (this.userheight - 100) * 0.9 + 5;
+
+            if(this.userweight >= this.minWeight && this.userweight <= this.maxWeight){
+                return "정상 몸무게입니다.";
+            }else if(this.userweight < this.minWeight){
+                return "정상 몸무게에서 미달입니다.";
+            }else{
+                return "정상 몸무게에서 초과입니다.";
+            }
+        }
+
+        let jang = new CheckWeight("장보리", 168, 62);
+        let park = new CheckWeight("박달재", 180, 88);
+        console.log(jang);
+        console.log(park);
+
+        document.write(jang.getInfo());
+        document.write(jang.getResult());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
